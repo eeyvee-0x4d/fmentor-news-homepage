@@ -1,0 +1,178 @@
+@tailwind base;
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+@layer base {
+  .wrapper {
+    @apply min-h-screen text-secondary-3 pb-8
+    lg:max-w-[90%] m-auto
+    xl:max-w-none
+}
+
+  /* NAVIGATION START */
+  .header {
+    @apply flex justify-between items-center
+    sm:px-4 sm:py-4 sm:relative
+    md:px-8
+    lg:static
+  }
+
+  .brand-logo {
+    @apply aspect-square w-12 grid place-content-center
+  }
+
+ .menu-button {
+    @apply sm:z-50 transition-all w-8 absolute 
+    sm:right-4
+    md:right-8
+    lg:hidden
+  }
+
+  .mobile-navigation {
+    @apply sm:absolute transition-all
+    sm:top-0 sm:left-0 sm:bg-[rgba(0,0,27,0.5)] sm:w-screen sm:h-screen
+    lg:hidden
+  }
+
+  .mobile-navigation .nav-items {
+    @apply flex justify-center bg-secondary-1 transition-all
+    sm:w-64 sm:ml-auto sm:h-screen sm:flex-col sm:items-start sm:gap-4 sm:p-4
+  }
+
+  .mobile-navigation .nav-item, .navigation .nav-item {
+    @apply hover:text-primary-2
+  }
+
+  .menu-open {
+    @apply fixed
+  }
+
+  nav.menu-close {
+    @apply opacity-0
+  } 
+
+  button.menu-close {
+    @apply absolute opacity-100
+  }
+
+  button.menu-open {
+    @apply fixed
+  }
+
+  .navigation .menu-open {
+    @apply opacity-100
+  }
+
+  .menu-close .nav-items {
+    @apply translate-x-full
+  }
+
+  .navigation {
+    @apply sm:hidden lg:block
+  }
+
+  .navigation .nav-items {
+    @apply flex justify-center items-center gap-8
+  }
+  /* NAVIGATION END */
+
+  /* CONTENT START */
+  .main-content {
+    @apply grid gap-8
+    sm:px-4 sm:grid-flow-row sm:grid-rows-[repeat(3,minmax(0,auto))]
+    md:px-8
+    lg:grid-cols-[repeat(2,minmax(0,auto))] lg:grid-rows-[repeat(2,minmax(0,auto))] lg:gap-4
+    xl:grid-cols-[repeat(3,minmax(0,auto))] xl:gap-8
+  }
+
+  .headline-news {
+    @apply flex justify-center items-center gap-4 text-left sm:flex-col
+    lg:col-start-1 lg:col-end-2 lg:row-start-1 lg:row-end-2 lg:justify-start
+    xl:col-end-3 xl:gap-8
+  }
+
+  .headline-news .headline-news__content {
+    @apply flex justify-center items-center gap-4
+    sm:flex-col
+    xl:flex-row xl:grow xl:items-stretch
+  }
+
+  .headline-news__content .content__title {
+    @apply font-extrabold text-secondary-4 text-[2.5em] leading-[2.5rem]
+    xl:basis-1/2 xl:text-6xl
+  }
+
+  .headline-news__content .content__text {
+    @apply flex flex-col gap-4 justify-between items-start
+    xl:basis-1/2 grow
+  }
+
+  .headline-news__content .headline-cta {
+    @apply px-8 py-4 bg-primary-2 text-secondary-1 font-semibold tracking-widest
+    hover:bg-secondary-4 transition-all
+  }
+
+  .new-news {
+    @apply bg-secondary-4 text-secondary-2 text-left p-4
+    lg:col-start-2 lg:col-end-3 lg:row-start-1 lg:row-end-2
+    xl:col-start-3 xl:col-end-4
+  }
+
+  .new-news .new-news__heading {
+    @apply mb-4 text-primary-1 font-bold text-[2.5rem] leading-none
+  }
+
+  .new-news .new-news__news-items {
+    @apply flex justify-center items-center flex-col gap-4
+  }
+
+  .new-news .news-items__content:nth-child(2) {
+    @apply border-y border-secondary-3
+  }
+
+  .new-news__news-items .news-items__content {
+    @apply py-4 leading-relaxed
+  }
+
+   .news-items__content .content-title {
+    @apply mb-2 text-secondary-1 font-bold
+    hover:text-primary-1 transition-all
+   }
+
+   .recommended-news {
+    @apply flex gap-8
+    sm:flex-col
+    lg:flex-row lg:gap-4 lg:col-start-1 lg:col-end-3 lg:row-start-2 lg:row-end-3
+    xl:col-end-4 xl:gap-8
+   }
+
+   .recommended-news .recommended-news__news-items {
+    @apply flex justify-center gap-4
+   }
+
+  .recommended-news__news-items .news-items__img {
+    @apply basis-1/4 grow h-full xl:basis-1/3
+  }
+
+  .news-items__img img {
+    @apply object-cover
+  }
+
+  .recommended-news__news-items .news-items__content {
+    @apply basis-3/4 text-left xl:basis-2/3
+  }
+
+  .recommended-news__news-items .news-items__content span {
+    @apply font-bold text-3xl text-secondary-2
+  }
+
+  .recommended-news__news-items .news-items__content h3 {
+    @apply font-bold text-secondary-4 leading-none my-2
+    hover:text-primary-2 transition-all
+  }
+}
+
